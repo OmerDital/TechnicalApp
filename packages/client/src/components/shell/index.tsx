@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import TechAppNav from './app-nav';
+import TechAppNav from './AppNav';
 
 const Shell: FC = () => <TechAppNav />;
 

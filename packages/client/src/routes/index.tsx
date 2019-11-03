@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import App from '../components/app/App';
+import App from '../components/App/App';
 
 import homeRoute from './home';
 import aboutRoute from './about';

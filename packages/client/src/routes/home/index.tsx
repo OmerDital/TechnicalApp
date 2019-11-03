@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Home from '../../components/home';
-import AuthorizedRoute from '../../components/AuthorizedRoute/AuthorizedRoute';
+import Home from '../../components/Home';
+import AuthorizedRoute from '../../components/AuthorizedRoute';
 
 const homeRoute = (
   <AuthorizedRoute key="home" exact path="/">
