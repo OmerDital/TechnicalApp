@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 
-import { Box } from '@material-ui/core';
+import Providers from '../../providers';
 
 import Shell from '../shell';
 
 const App: FC = ({ children }) => (
-  <Box>
+  <Providers>
     <Shell />
     {children}
-  </Box>
+  </Providers>
 );
 
 export default App;

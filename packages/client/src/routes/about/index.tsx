@@ -1,8 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
 import About from '../../components/about';
+import AuthorizedRoute from '../../components/AuthorizedRoute/AuthorizedRoute';
 
-const aboutRoute = <Route key="about" path="/about" component={About} />;
+const aboutRoute = (
+  <AuthorizedRoute key="about" path="/about">
+    <About />
+  </AuthorizedRoute>
+);
 
 export default aboutRoute;

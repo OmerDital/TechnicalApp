@@ -1,8 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
 import Home from '../../components/home';
+import AuthorizedRoute from '../../components/AuthorizedRoute/AuthorizedRoute';
 
-const aboutRoute = <Route key="home" exact path="/" component={Home} />;
+const homeRoute = (
+  <AuthorizedRoute key="home" exact path="/">
+    <Home />
+  </AuthorizedRoute>
+);
 
-export default aboutRoute;
+export default homeRoute;
