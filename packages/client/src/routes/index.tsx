@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 
 import App from '../components/App/App';
 
-import homeRoute from './home';
+import changeResourcesRoute from './change-resources';
 import aboutRoute from './about';
+import otherFeatureRoute from './other-feature';
 import unauthorizedRoute from './unauthorized';
 
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
@@ -12,7 +13,14 @@ const Routes: FC = () => {
   return (
     <Router>
       <App>
-        <Switch>{[homeRoute, aboutRoute, unauthorizedRoute]}</Switch>
+        <Switch>
+          {[
+            changeResourcesRoute,
+            aboutRoute,
+            otherFeatureRoute,
+            unauthorizedRoute
+          ]}
+        </Switch>
       </App>
     </Router>
   );
