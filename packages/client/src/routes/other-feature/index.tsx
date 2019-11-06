@@ -1,12 +1,19 @@
 import React from 'react';
 
-import OtherFeature from '../../components/OtherFeature';
+import Loading from '../../components/LoadingCircular';
 import AuthorizedRoute from '../../components/AuthorizedRoute';
 
-const changeResourcesRoute = (
+import Loadable from 'react-loadable';
+
+const AsyncOtherFeature = Loadable({
+  loader: () => import('../../components/OtherFeature'),
+  loading: Loading
+});
+
+const otherFeatureRoute = (
   <AuthorizedRoute key="otherFeature" path="/otherFeature">
-    <OtherFeature />
+    <AsyncOtherFeature />
   </AuthorizedRoute>
 );
 
-export default changeResourcesRoute;
+export default otherFeatureRoute;
