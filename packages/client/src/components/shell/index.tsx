@@ -10,7 +10,7 @@ const Shell: FC = ({ children }) => {
   return (
     <Grid container direction="column" className={classes.root}>
       <AppHeader />
-      <Grid container direction="row" className={classes.root}>
+      <Grid container className={classes.root}>
         <SideNav />
         {children}
       </Grid>

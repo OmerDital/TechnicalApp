@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, makeStyles, createStyles } from '@material-ui/core';
 
 interface LoadingCircularProps {
   isLoading: boolean;
@@ -8,8 +8,10 @@ interface LoadingCircularProps {
 }
 
 const LoadingCircular: FC<LoadingCircularProps> = ({ isLoading, error }) => {
+  const classes = useStyles();
+
   if (isLoading) {
-    return <CircularProgress size={100} />;
+    return <CircularProgress size={100} className={classes.circular} />;
   }
   //TODO: handle error
   else if (error) {
@@ -18,5 +20,15 @@ const LoadingCircular: FC<LoadingCircularProps> = ({ isLoading, error }) => {
     return null;
   }
 };
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    circular: {
+      position: 'relative',
+      top: 'calc(50% - 100px)',
+      left: 'calc(50% - 100px)'
+    }
+  })
+);
 
 export default LoadingCircular;
