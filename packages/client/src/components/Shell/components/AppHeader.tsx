@@ -15,7 +15,7 @@ const AppHeader: FC = () => {
     <AppBar position="static" className={classes.header}>
       <Toolbar variant="dense">
         <Typography variant="h6" className={classes.title}>
-          Technical Application
+          אפליקציית טכנאי
         </Typography>
       </Toolbar>
     </AppBar>

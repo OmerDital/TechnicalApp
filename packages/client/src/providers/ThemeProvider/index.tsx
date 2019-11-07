@@ -14,7 +14,8 @@ const theme = createMuiTheme({
     button: {
       textTransform: 'none'
     }
-  }
+  },
+  direction: 'rtl'
 });
 
 export default theme;

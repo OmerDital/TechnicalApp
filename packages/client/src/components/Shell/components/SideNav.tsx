@@ -13,16 +13,15 @@ import {
 import { NavLink } from 'react-router-dom';
 import FindReplaceIcon from '@material-ui/icons/FindReplace';
 import Android from '@material-ui/icons/Android';
-import { typography } from '@material-ui/system';
 
 const SideNav: FC = () => {
   const classes = useStyles();
   return (
     <Paper className={classes.sideNav}>
       <Grid container direction="column" alignItems="center">
-        <Avatar className={classes.avatar}>OD</Avatar>
-        <Typography variant="h4">John Doe</Typography>
-        <Typography variant="body2">technai</Typography>
+        <Avatar className={classes.avatar}>עד</Avatar>
+        <Typography variant="h4">עומר דיטל</Typography>
+        <Typography variant="body2">רמד טכנאי</Typography>
         <Divider variant="middle" className={classes.divider} />
         <Button
           component={NavLink}
@@ -32,7 +31,7 @@ const SideNav: FC = () => {
           className={classes.button}
         >
           <FindReplaceIcon className={classes.icon} />
-          <Typography variant="body2">Change Resources</Typography>
+          <Typography variant="body2">שנה ריסורסים</Typography>
         </Button>
         <Button
           component={NavLink}
@@ -41,7 +40,7 @@ const SideNav: FC = () => {
           className={classes.button}
         >
           <Android className={classes.icon} />
-          <Typography variant="body2">Other Feature</Typography>
+          <Typography variant="body2">פיצ'ר אחר</Typography>
         </Button>
       </Grid>
     </Paper>
