@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Route, Redirect, RouteProps } from 'react-router-dom';
-import { makeStyles, createStyles } from '@material-ui/core';
 
 //import { AuthContext } from '../../providers/AuthProvider';
 
@@ -15,13 +14,5 @@ const AuthorizedRoute: FC<RouteProps> = ({ children, ...props }) => {
     <Redirect to="/unauthorized" />
   );
 };
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      flexGrow: 1
-    }
-  })
-);
 
 export default AuthorizedRoute;

@@ -58,7 +58,7 @@ const AuthProvider: FC = ({ children }) => {
     };
 
     resolveUser();
-  }, []);
+  }, [me]);
 
   return (
     <AuthContext.Provider

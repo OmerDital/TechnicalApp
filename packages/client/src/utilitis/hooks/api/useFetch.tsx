@@ -9,7 +9,6 @@ const useFetch = (url: string) => {
   const [loading, setLoading] = useState(true);
 
   const { open } = useContext(ErrorHandlerContext);
-
   const fetchUrl = useCallback(async () => {
     try {
       const { data: fetchedData } = await instance.get(url);
