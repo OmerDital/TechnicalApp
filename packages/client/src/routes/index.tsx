@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, Suspense } from 'react';
 import { Grid, createStyles, makeStyles } from '@material-ui/core';
 
 import App from '../components/App/App';
+import LoadingSpinner from '../components/LoadingCircular';
 
 import changeResourcesRoute from './change-resources';
 import aboutRoute from './about';
@@ -17,14 +18,16 @@ const Routes: FC = () => {
     <Router>
       <App>
         <Grid container className={classes.root}>
-          <Switch>
-            {[
-              changeResourcesRoute,
-              aboutRoute,
-              otherFeatureRoute,
-              unauthorizedRoute
-            ]}
-          </Switch>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Switch>
+              {[
+                changeResourcesRoute,
+                aboutRoute,
+                otherFeatureRoute,
+                unauthorizedRoute
+              ]}
+            </Switch>
+          </Suspense>
         </Grid>
       </App>
     </Router>

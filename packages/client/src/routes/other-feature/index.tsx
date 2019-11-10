@@ -1,18 +1,12 @@
-import React from 'react';
+import React, { lazy } from 'react';
 
-import Loading from '../../components/LoadingCircular';
 import AuthorizedRoute from '../../components/AuthorizedRoute';
 
-import Loadable from 'react-loadable';
-
-const AsyncOtherFeature = Loadable({
-  loader: () => import('../../components/OtherFeature'),
-  loading: Loading
-});
+const OtherFeature = lazy(() => import('../../components/OtherFeature'));
 
 const otherFeatureRoute = (
   <AuthorizedRoute key="otherFeature" path="/otherFeature">
-    <AsyncOtherFeature />
+    <OtherFeature />
   </AuthorizedRoute>
 );
 
