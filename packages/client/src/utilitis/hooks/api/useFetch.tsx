@@ -1,18 +1,21 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useContext, useCallback } from 'react';
 
 import { instance } from '../../axios/instance';
+
+import { ErrorHandlerContext } from '../../../providers/ErrorHandlerProvider';
 
 const useFetch = (url: string) => {
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+  const { open } = useContext(ErrorHandlerContext);
 
   const fetchUrl = useCallback(async () => {
     try {
       const { data: fetchedData } = await instance.get(url);
       setData(fetchedData);
-    } catch (e) {
-      setError(e);
+    } catch ({ message }) {
+      open(message);
     } finally {
       setLoading(false);
     }
@@ -22,7 +25,7 @@ const useFetch = (url: string) => {
     fetchUrl();
   }, [fetchUrl]);
 
-  return [data, loading, error];
+  return [data, loading];
 };
 
 export default useFetch;

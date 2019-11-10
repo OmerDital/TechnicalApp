@@ -29,13 +29,9 @@ interface contextProps {
 
 const AuthContext = createContext({} as contextProps);
 
-const AuthProvider: FC = props => {
+const AuthProvider: FC = ({ children }) => {
   const [user, setUser] = useState<user | null>(null);
-  const [me, , error] = useFetch('me');
-
-  if (error) {
-    console.log(error);
-  }
+  const [me] = useFetch('me');
 
   const setAuth = async ({ token, user: newUser }: authProps) => {
     if (token) {
@@ -62,7 +58,7 @@ const AuthProvider: FC = props => {
     };
 
     resolveUser();
-  }, [me]);
+  }, []);
 
   return (
     <AuthContext.Provider
@@ -73,8 +69,9 @@ const AuthProvider: FC = props => {
         setAuth,
         setLoggedOut
       }}
-      {...props}
-    />
+    >
+      {children}
+    </AuthContext.Provider>
   );
 };
 
